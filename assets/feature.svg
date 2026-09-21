@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 500" width="1024" height="500">
+  <rect width="1024" height="500" fill="#111318"/>
+  <rect x="96" y="226" width="832" height="48" fill="#2A2F3A"/>
+  <rect x="446" y="226" width="132" height="48" fill="#3DDC84"/>
+  <rect x="505" y="166" width="14" height="168" fill="#FFFFFF"/>
+  <text x="512" y="118" text-anchor="middle" font-family="Apple SD Gothic Neo, Helvetica, sans-serif" font-weight="700" font-size="72" fill="#FFFFFF">타이밍 탭</text>
+  <text x="512" y="410" text-anchor="middle" font-family="Apple SD Gothic Neo, Helvetica, sans-serif" font-size="30" fill="#9AA3B2">초록 구간 안에서 탭하세요. 점점 빨라집니다.</text>
+</svg>
