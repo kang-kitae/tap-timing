@@ -73,7 +73,7 @@ class _GameScreenState extends State<GameScreen>
       backgroundColor: _bg,
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: _onTap,
+        onTapDown: (_) => _onTap(), // 뗄 때가 아니라 누르는 순간 판정
         child: Stack(
           children: [
             Positioned.fill(child: CustomPaint(painter: _TrackPainter(game, _t))),

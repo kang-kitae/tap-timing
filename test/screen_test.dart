@@ -46,4 +46,23 @@ void main() {
     expect(find.textContaining('BEST 1'), findsOneWidget);
     expect((await SharedPreferences.getInstance()).getInt('best'), 1);
   });
+
+  testWidgets('judges the tap at finger down, not at release', (tester) async {
+    SharedPreferences.setMockInitialValues({});
+    final game = Game(random: Random(3));
+    await tester.pumpWidget(MaterialApp(home: GameScreen(game: game)));
+    await tester.pump();
+    await tapScreen(tester); // start
+
+    await tester.pump(timeTo(game, game.zoneCenter)); // 마커가 구간 중심에 있을 때 누름
+    final finger = await tester.startGesture(
+      tester.getCenter(find.byType(GestureDetector)),
+    );
+    await tester.pump(const Duration(milliseconds: 300)); // 누른 채 300ms → 마커는 구간 밖
+    await finger.up();
+    await tester.pump();
+
+    expect(game.score, 1);
+    expect(game.phase, Phase.playing);
+  });
 }
